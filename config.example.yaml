@@ -1,0 +1,48 @@
+# SPECTER Configuration Template
+# Copy this to config.yaml and fill in your details
+# config.yaml is in .gitignore — never commit your real API key!
+
+provider: nvidia
+model: deepseek-ai/deepseek-r1
+api_key: YOUR_API_KEY_HERE
+base_url: https://integrate.api.nvidia.com/v1
+
+# Other providers:
+
+# OpenRouter
+# provider: openrouter
+# model: anthropic/claude-sonnet-4-5
+# api_key: sk-or-xxxx
+# base_url: https://openrouter.ai/api/v1
+
+# Ollama (free, local)
+# provider: ollama
+# model: llama3
+# api_key: ollama
+# base_url: http://localhost:11434/v1
+
+# OpenAI
+# provider: openai
+# model: gpt-4o
+# api_key: sk-xxxx
+# base_url: https://api.openai.com/v1
+
+max_tokens: 4096
+temperature: 0.2
+max_rounds: 10
+request_timeout: 30
+
+scan:
+  threads: 1
+  verify_ssl: false
+  follow_redirects: true
+  request_delay: 0.5
+  user_agent: "SPECTER-Scanner/1.0"
+
+output:
+  report_dir: reports
+  session_dir: sessions
+  formats:
+    - markdown
+    - html
+    - json
